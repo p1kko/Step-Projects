@@ -1,0 +1,239 @@
+@import './variables';
+@import './mixins';
+
+* {
+    box-sizing: border-box;
+    margin-top: -10px;
+}
+
+.subscription-pricing {
+    width: 100%;
+    margin-top: -80px;
+    min-width: 320px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(74, 59, 78);
+    // background: url(./img/bgprice-m.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.subscription-pricing__title {
+    margin-top: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 32px;
+}
+
+.subscription-pricing__small-card {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding-bottom: 18px;
+    
+}
+
+.head-small-card {
+    width: 257px;
+    height: 97px;
+    background-color: rgba(105, 91, 106);
+    @include flex;
+
+}
+
+.head-small-card>h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.body-small-card {
+    width: 257px;
+    height: 360px;
+    background-color: rgba(255, 255, 255, 0.11);
+}
+
+.body-small-card>h2 {
+    height: 57px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 62px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.body-small-card>h2>span {
+    font-weight: bold;
+}
+
+.body-small-card>h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.line {
+    margin-top: 38px;
+    width: 60px;
+    height: 5px;
+    background: #8D81AC;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.body-small-card>p {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    height: 33px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+
+.body-small-card>button {
+    width: 160px;
+    height: 42px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(119, 107, 121);
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 15px;
+    text-transform: uppercase;
+    
+   
+}
+
+.head-big-card {
+    width: 299px;
+    height: 111px;
+    background-color: rgb(63, 46, 65);
+}
+
+.body-big-card {
+    width: 299px;
+    height: 449px;
+    background-color: rgba(70, 48, 72, .84);
+}
+
+.body-big-card>h2 {
+    font-size: 82px;
+    line-height: 84px;
+    margin-top: 14px;
+    margin-bottom: 16px;
+    height: 78px;
+}
+
+.body-big-card>.line {
+    margin-top: 46px;
+}
+
+.body-big-card>p {
+    margin-top: 40px;
+    margin-bottom: 83px;
+    line-height: 32px;
+}
+
+.body-big-card>button {
+    width: 190px;
+    height: 52px;
+    border-radius: 26px;
+    background-color: rgb(99, 82, 100);
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+@media (min-width: $tablet) {
+
+    .subscription-pricing {
+        background-image: url(./img/bg-price-t.png);
+       margin-top: -40px;
+    }
+
+    .subscription-pricing__title {
+        padding-top: 48px;
+        font-size: 42px;
+        line-height: 44px;
+        margin-bottom: 0;
+    }
+
+    .subscription-pricing__cards {
+        display: grid;
+        grid-template-areas:
+            "a b"
+            "c d";
+        justify-content: center;
+    }
+
+    .subscription-pricing__small-card {
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+
+    .big-card {
+        padding-right: 35px;
+        padding-top: 0;
+    }
+}
+
+@media (min-width: $desktop) {
+    .subscription-pricing {
+        background-image: url(./img/bg-price-d.png);
+    }
+
+    .subscription-pricing__title {
+        padding-top: 83px;
+        font-size: 48px;
+        line-height: 50px;
+    }
+
+    .subscription-pricing__cards {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .subscription-pricing__small-card {
+        margin-top: 112px;
+        padding: 7px;
+    }
+
+    .big-card {
+        padding-right: 0px;
+        margin-top: 61px;
+        padding-bottom: 97px;
+    }
+}

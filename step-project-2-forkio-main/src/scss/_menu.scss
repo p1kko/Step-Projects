@@ -1,0 +1,147 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+
+
+.header__burger {
+  position: relative;
+  width: 26px;
+  height: 21px;
+  background: linear-gradient(to right, white 0%, white 100%);
+  background-size: 50px 2px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: 0.2s background;
+  border: none;
+  font-size: 0;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 26px;
+    height: 2px;
+    background: white;
+    transition: transform 0.2s ;
+    transform: 8px 7px;
+  }
+  &:after {
+    top: 20px;
+    transform: 8px -5px;
+  }
+  &:before {
+      width: 17px;
+      left:8px;
+
+  }
+  @media (min-width:481px) {
+    display: none;
+ 
+  }
+
+}
+
+.navbar {
+position: absolute;
+width: 90%;
+left: 50%;
+top:100%;
+transform:translateX(-50%);
+&__list {
+  background: #807878;
+  list-style: none;
+}
+&__item {
+  background: #333333;
+  margin-bottom: 1px;
+}
+&__item:last-child {
+  margin-bottom: 0px;
+}
+&__link {
+  position: relative;
+  display: inline-block;
+  font-weight: 300;
+  // margin: 1px 1px;
+  width: 100%;
+  font-size: 24px;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+&__link:hover {
+  color: $main-color;
+  @media (min-width:481px) {
+    color: white;
+  }
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width: 8px;
+    background-color: $main-color;
+    height: 53px;
+    left: 0;
+    @media (min-width:481px) {
+      content: none;
+      color: white;
+    }
+  }
+}
+@media (min-width:481px) and (max-width:992px) {
+  & {
+    position: absolute;
+    top: 47%;
+    width: 100%;
+    
+  }
+  &.hidden {
+    display: unset;
+  }
+  &__list {
+    display: flex;
+    background: unset;
+    justify-content: space-evenly;
+  }
+  &__item {
+    background: unset;
+  }
+  &__link {
+    color: $main-color;
+    padding: 35px 0 22px 0;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+@media (min-width:993px) {
+  & {
+    position: absolute;
+    top: unset;
+    width: 70%;
+    
+  }
+  &.hidden {
+    display: unset;
+  }
+  &__list {
+    display: flex;
+    background: unset;
+    justify-content: flex-end;
+  }
+  &__item {
+    background: unset;
+  }
+  &__link {
+    color: $main-color;
+    padding: 27px 48px 22px 0;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+}
